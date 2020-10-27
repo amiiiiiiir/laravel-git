@@ -339,3 +339,4 @@ Route::middleware(['auth','verified'])->group(function (){
 //    else{
 //        return redirect()->to('home');
 //    }
+// ایجاد تغییر 
