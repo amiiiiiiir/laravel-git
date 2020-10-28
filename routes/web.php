@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PostsController;
+use Illuminate\Support\Facades\App;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -317,6 +318,18 @@ Route::middleware(['auth','verified'])->group(function (){
 
 
 });
+Route::prefix('fa')->group(function (){
+    App::setlocale('fa');
+//    $locale = App::getlocale();
+//    if (App::islocale('fa')){
+//        dd('زبان فارسی');
+//    }
+    Route::get('message',function (){
+        return view('message');
+    });
+});
+
+
 //Route::get('/',function (){
 //
 //    $user = Auth::loginUsingId(6);
@@ -339,4 +352,4 @@ Route::middleware(['auth','verified'])->group(function (){
 //    else{
 //        return redirect()->to('home');
 //    }
-// ایجاد تغییر 
+// ایجاد تغییر
